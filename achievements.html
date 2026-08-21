@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Electronics & Communication Engineering | SECE</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: '#f59e0b',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(to right, rgba(12, 74, 110, 0.9), rgba(12, 74, 110, 0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased font-sans pt-16">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="bg-white p-1 rounded-lg shadow-sm">
+                        <img src="clg-logo.jpg" alt="SECE Logo" class="h-9 md:h-11 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=SECE'">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-5 lg:space-x-6">
+                    <a href="index.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Home</a>
+                    <a href="programs.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Core
+                        Areas</a>
+                    <a href="achievements.html"
+                        class="text-brand-600 font-bold text-xs transition-colors">Achievements</a>
+                    <a href="placements.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Placements</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-slate-600 hover:text-brand-600 p-1.5">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Student Achievements -->
+    <section id="achievements" class="py-12 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-1">Student Excellence</h2>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Student Achievements</h3>
+                <p class="text-slate-600 text-sm">Our students consistently bring laurels to the department by winning
+                    top honors at national and international hackathons, symposiums, and innovation challenges.</p>
+            </div>
+
+            <!-- Masonry Grid for Achievements -->
+            <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+                <!-- Posters/Images extracted from SECE -->
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2026/05/rockstar-1024x576.webp" alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-12-at-09.13.59_b1068241-1024x576.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-19-at-15.00.22_e5d63d16-1024x576.jpg"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-19-at-09.35.23_4b116fee-1024x576.jpg"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-05-at-9.49.36-AM-1024x576.jpeg"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/10/POSTER-40-B-IIT-BOMBAY-copy-1024x576.jpg"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/03/Anveshan-2024-1.webp" alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/03/Unplugged-2.0-24hr-hardware-hackathon-13.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/03/2nd-Digital-india-Risc-v-Symposium-2025-1.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2025/03/Project-Expo_Dhruva-25_Karpagam_TV.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2024/08/36-hours-NinjaCart-Hackathon-AgriTech-Hackathon-1.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2024/11/Anokha-Ideathon-Runners-up.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2024/11/Entrepreneurship-Summit-2024.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2024/11/Ideathon-EKKLESIA24.webp" alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div
+                    class="break-inside-avoid rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200 bg-white">
+                    <img src="https://sece.ac.in/wp-content/uploads/2024/11/Tata-Technologies-InnoVent-2024.webp"
+                        alt="Achievement"
+                        class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="bg-white p-1.5 rounded-md">
+                        <img src="clg-logo.jpg" alt="SECE Logo" class="h-6 w-auto opacity-90"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=SECE'">
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Dept. of ECE</h4>
+                        <p class="text-[10px]">Sri Eshwar College of Engineering</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-xs mb-1">Empowering the next generation of electronics and communication innovators.</p>
+                    <p class="text-[10px] opacity-50">&copy; 2024 Sri Eshwar College of Engineering. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling & Navbar background script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'bg-white/95');
+                    header.classList.remove('bg-white/90');
+                } else {
+                    header.classList.remove('shadow-md', 'bg-white/95');
+                    header.classList.add('bg-white/90');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="site-shell.js"></script>
+</body>
+
+</html>

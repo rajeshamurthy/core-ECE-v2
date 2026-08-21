@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Embedded Systems and IoT core domain at SECE ECE, focused on hardware design, firmware, connectivity, IoT systems, industry academies, and student career pathways.">
+    <title>Embedded Systems &amp; IoT | SECE ECE</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'Inter', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1'
+                        }
+                    },
+                    boxShadow: {
+                        soft: '0 18px 50px rgba(15, 23, 42, 0.08)',
+                        glow: '0 24px 60px rgba(2, 132, 199, 0.20)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .circuit-grid {
+            background-image:
+                linear-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        .timeline-card::before {
+            content: "";
+            position: absolute;
+            top: 2.25rem;
+            left: -1rem;
+            width: 1rem;
+            height: 2px;
+            background: #cbd5e1;
+        }
+
+        .timeline-card:first-child::before {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .timeline-card::before {
+                top: -1rem;
+                left: 2.25rem;
+                width: 2px;
+                height: 1rem;
+            }
+        }
+
+        body.iot-blue-theme {
+            --ece-yellow: #38bdf8;
+            --ece-yellow-deep: #0284c7;
+            --ece-border: rgba(56, 189, 248, 0.28);
+        }
+
+        .iot-blue-theme .text-brand-600,
+        .iot-blue-theme .text-brand-500,
+        .iot-blue-theme nav a.text-brand-600,
+        .iot-blue-theme nav a:hover {
+            color: #38bdf8 !important;
+        }
+
+        .iot-blue-theme .bg-brand-50,
+        .iot-blue-theme .bg-brand-100,
+        .iot-blue-theme .bg-blue-50,
+        .iot-blue-theme .bg-white\/10 {
+            background: rgba(2, 132, 199, 0.18) !important;
+            color: #e0f2fe !important;
+            border-color: rgba(56, 189, 248, 0.34) !important;
+        }
+
+        .iot-blue-theme .border-brand-100,
+        .iot-blue-theme .border-brand-200,
+        .iot-blue-theme .border-brand-400\/30,
+        .iot-blue-theme .border-slate-200 {
+            border-color: rgba(56, 189, 248, 0.28) !important;
+        }
+
+        .iot-blue-theme .group:hover .group-hover\:bg-brand-600 {
+            background: linear-gradient(135deg, #0369a1, #0ea5e9) !important;
+        }
+
+        .iot-blue-theme .topic-pill {
+            background: rgba(14, 165, 233, 0.16) !important;
+            border-color: rgba(56, 189, 248, 0.42) !important;
+            color: #f0f9ff !important;
+        }
+
+        .iot-blue-theme .academy-badge {
+            background: rgba(14, 165, 233, 0.16) !important;
+            color: #7dd3fc !important;
+            border: 1px solid rgba(56, 189, 248, 0.34);
+        }
+
+        .journey-path::before {
+            content: "";
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: 3.2rem;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(14, 165, 233, 0.2), rgba(56, 189, 248, 0.95), rgba(14, 165, 233, 0.2));
+            border-radius: 999px;
+        }
+
+        @media (max-width: 767px) {
+            .journey-path::before {
+                left: 2.25rem;
+                right: auto;
+                top: 2rem;
+                bottom: 2rem;
+                width: 3px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="iot-blue-theme bg-slate-50 text-slate-800 antialiased font-sans pt-16">
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <a href="index.html" class="bg-white p-1 rounded-lg shadow-sm">
+                    <img src="clg-logo.jpg" alt="SECE Logo" class="h-9 md:h-11 w-auto object-contain">
+                </a>
+                <nav class="hidden md:flex space-x-5 lg:space-x-6" aria-label="Primary navigation">
+                    <a href="index.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Home</a>
+                    <a href="programs.html" class="text-brand-600 font-bold text-xs transition-colors">Core Areas</a>
+                    <a href="achievements.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Achievements</a>
+                    <a href="placements.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Placements</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-bg relative overflow-hidden py-8 sm:py-10 lg:py-12">
+            <div class="absolute inset-0 circuit-grid opacity-70" aria-hidden="true"></div>
+
+            <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a href="programs.html"
+                    class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-brand-600 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:bg-brand-50">
+                    <i
+                        class="fa-solid fa-arrow-left text-[0.7rem] transition-transform duration-300 group-hover:-translate-x-1"></i>
+                    Back to Core Domains
+                </a>
+
+                <div
+                    class="section-panel mt-5 rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-soft backdrop-blur md:p-6 lg:p-7">
+                    <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                        <div>
+                            <span
+                                class="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-[0.68rem] font-extrabold uppercase tracking-[0.26em] text-brand-600">Core
+                                Domain</span>
+                            <h1
+                                class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                                Embedded Systems &amp; IoT</h1>
+                            <p class="mt-4 max-w-xl text-sm leading-7 text-slate-600 md:text-base">A hardware-first
+                                track where students design connected devices, write firmware, understand protocols, and
+                                build intelligent sensor-to-cloud systems.</p>
+                        </div>
+
+                        <div class="grid gap-3 sm:grid-cols-2">
+                            <article
+                                class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h2 class="mt-3 text-sm font-bold text-slate-900">Hardware Design</h2>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-600">Boards, sensors, actuators, power
+                                    stages, and physical interfaces.</p>
+                            </article>
+                            <article
+                                class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <h2 class="mt-3 text-sm font-bold text-slate-900">Firmware</h2>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-600">Embedded C, bare metal logic, RTOS
+                                    tasks, drivers, and debugging.</p>
+                            </article>
+                            <article
+                                class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <h2 class="mt-3 text-sm font-bold text-slate-900">Connectivity</h2>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-600">Wired buses, wireless links,
+                                    gateways,
+                                    and cloud communication.</p>
+                            </article>
+                            <article
+                                class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-cloud"></i>
+                                </div>
+                                <h2 class="mt-3 text-sm font-bold text-slate-900">IoT Systems</h2>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-600">Telemetry, dashboards, automation,
+                                    monitoring, and analytics.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-14 lg:pb-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-3">
+                    <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h2 class="font-display text-xl font-bold text-slate-900">Topics &amp; Skill Matrix</h2>
+                        </div>
+                        <div class="mt-6 flex flex-wrap gap-2.5">
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">Microcontroller
+                                Architecture</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">ARM
+                                / ESP32</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">Embedded
+                                C / C++</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">RTOS
+                                / FreeRTOS</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">I2C</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">SPI</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">UART</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">MQTT</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">HTTP</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">Hardware
+                                Prototyping</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">PCB
+                                Design</span>
+                            <span
+                                class="topic-pill rounded-full border border-brand-400/30 bg-white/10 px-3 py-2 text-xs font-semibold text-slate-100">Sensor
+                                Integration</span>
+                        </div>
+                    </section>
+
+                    <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h2 class="font-display text-xl font-bold text-slate-900">Industry Academies &amp; Alliances
+                            </h2>
+                        </div>
+                        <div class="mt-6 space-y-4">
+                            <article
+                                class="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-lg">
+                                <div class="flex items-center justify-between gap-4">
+                                    <div class="flex min-w-0 items-center gap-3">
+                                        <div
+                                            class="flex h-12 w-20 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Red_Hat_logo.svg"
+                                                alt="Red Hat Academy logo" class="max-h-8 w-full object-contain">
+                                        </div>
+                                        <h3 class="text-base font-extrabold text-slate-900">Red Hat Academy</h3>
+                                    </div>
+                                    <span
+                                        class="academy-badge rounded-full bg-blue-50 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-wide text-brand-600">Linux</span>
+                                </div>
+                                <p class="mt-3 text-sm leading-6 text-slate-600">Builds enterprise Linux, open-source
+                                    infrastructure, and edge OS confidence for connected-device deployment.</p>
+                            </article>
+                            <article
+                                class="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-lg">
+                                <div class="flex items-center justify-between gap-4">
+                                    <div class="flex min-w-0 items-center gap-3">
+                                        <div
+                                            class="flex h-12 w-20 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                                                alt="Cisco Networking Academy logo"
+                                                class="max-h-8 w-full object-contain">
+                                        </div>
+                                        <h3 class="text-base font-extrabold text-slate-900">Cisco Networking Academy
+                                        </h3>
+                                    </div>
+                                    <span
+                                        class="academy-badge rounded-full bg-blue-50 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-wide text-brand-600">IoT</span>
+                                </div>
+                                <p class="mt-3 text-sm leading-6 text-slate-600">Strengthens IoT networking,
+                                    cybersecurity fundamentals, routing, switching, and certification readiness.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
+                        <div class="p-6 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                </div>
+                                <h2 class="font-display text-xl font-bold text-slate-900">Media Spotlight</h2>
+                            </div>
+                        </div>
+                        <figure class="group relative mx-4 mb-4 overflow-hidden rounded-2xl shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                                alt="Close-up of electronic circuit hardware used in embedded systems and IoT labs"
+                                class="h-72 w-full object-cover transition duration-700 group-hover:scale-105">
+                            <figcaption
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 to-transparent p-5">
+                                <span
+                                    class="inline-flex rounded-full bg-white/15 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-white backdrop-blur">Embedded
+                                    Hardware Lab</span>
+                                <p class="mt-2 text-sm font-medium leading-6 text-white/90">From breadboard experiments
+                                    to deployable sensor-to-cloud prototypes.</p>
+                            </figcaption>
+                        </figure>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-16 lg:pb-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-8 max-w-3xl text-center">
+                    <span class="text-xs font-extrabold uppercase tracking-[0.35em] text-brand-600">The Student
+                        Journey</span>
+                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                        Embedded growth pathway</h2>
+                    <p class="mt-4 text-sm leading-7 text-slate-600">A practical progression where students build
+                        technical depth, real-world confidence, and career readiness step by step.</p>
+                </div>
+
+                <div class="section-panel rounded-3xl border border-slate-200 bg-white p-5 shadow-soft md:p-7">
+                    <div class="journey-path relative grid gap-4 md:grid-cols-5">
+                        <article
+                            class="group relative z-10 rounded-2xl border border-slate-200 bg-white/90 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+                            <div class="flex items-center gap-3 md:block">
+                                <div
+                                    class="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-50 text-xl text-brand-600 shadow-lg transition duration-300 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                    <span
+                                        class="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-[0.65rem] font-extrabold text-white">01</span>
+                                </div>
+                                <div class="md:mt-4">
+                                    <h3 class="font-display text-lg font-bold text-slate-900">Training</h3>
+                                    <p class="mt-1 text-xs leading-5 text-slate-600">Foundation labs, mentor sessions,
+                                        embedded C, sensors, and architecture basics.</p>
+                                </div>
+                            </div>
+                            <span
+                                class="mt-4 inline-flex rounded-full border border-brand-400/30 bg-white/10 px-3 py-1 text-[0.68rem] font-bold text-slate-100">Skill
+                                Base</span>
+                        </article>
+
+                        <article
+                            class="group relative z-10 rounded-2xl border border-slate-200 bg-white/90 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow md:mt-8">
+                            <div class="flex items-center gap-3 md:block">
+                                <div
+                                    class="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-50 text-xl text-brand-600 shadow-lg transition duration-300 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-certificate"></i>
+                                    <span
+                                        class="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-[0.65rem] font-extrabold text-white">02</span>
+                                </div>
+                                <div class="md:mt-4">
+                                    <h3 class="font-display text-lg font-bold text-slate-900">Certifications</h3>
+                                    <p class="mt-1 text-xs leading-5 text-slate-600">Linux, IoT networking, cloud
+                                        connectivity, cybersecurity, and platform credentials.</p>
+                                </div>
+                            </div>
+                            <span
+                                class="mt-4 inline-flex rounded-full border border-brand-400/30 bg-white/10 px-3 py-1 text-[0.68rem] font-bold text-slate-100">Proof</span>
+                        </article>
+
+                        <article
+                            class="group relative z-10 rounded-2xl border border-slate-200 bg-white/90 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+                            <div class="flex items-center gap-3 md:block">
+                                <div
+                                    class="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-50 text-xl text-brand-600 shadow-lg transition duration-300 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                    <span
+                                        class="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-[0.65rem] font-extrabold text-white">03</span>
+                                </div>
+                                <div class="md:mt-4">
+                                    <h3 class="font-display text-lg font-bold text-slate-900">Projects</h3>
+                                    <p class="mt-1 text-xs leading-5 text-slate-600">Sensor dashboards, automation
+                                        nodes, firmware modules, and deployable prototypes.</p>
+                                </div>
+                            </div>
+                            <span
+                                class="mt-4 inline-flex rounded-full border border-brand-400/30 bg-white/10 px-3 py-1 text-[0.68rem] font-bold text-slate-100">Portfolio</span>
+                        </article>
+
+                        <article
+                            class="group relative z-10 rounded-2xl border border-slate-200 bg-white/90 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow md:mt-8">
+                            <div class="flex items-center gap-3 md:block">
+                                <div
+                                    class="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-50 text-xl text-brand-600 shadow-lg transition duration-300 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-people-group"></i>
+                                    <span
+                                        class="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-[0.65rem] font-extrabold text-white">04</span>
+                                </div>
+                                <div class="md:mt-4">
+                                    <h3 class="font-display text-lg font-bold text-slate-900">Hackathons</h3>
+                                    <p class="mt-1 text-xs leading-5 text-slate-600">Rapid builds, debugging sprints,
+                                        teamwork, pitching, and problem-solving under pressure.</p>
+                                </div>
+                            </div>
+                            <span
+                                class="mt-4 inline-flex rounded-full border border-brand-400/30 bg-white/10 px-3 py-1 text-[0.68rem] font-bold text-slate-100">Speed</span>
+                        </article>
+
+                        <article
+                            class="group relative z-10 rounded-2xl border border-slate-200 bg-white/90 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+                            <div class="flex items-center gap-3 md:block">
+                                <div
+                                    class="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-50 text-xl text-brand-600 shadow-lg transition duration-300 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                    <span
+                                        class="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-[0.65rem] font-extrabold text-white">05</span>
+                                </div>
+                                <div class="md:mt-4">
+                                    <h3 class="font-display text-lg font-bold text-slate-900">Placements</h3>
+                                    <p class="mt-1 text-xs leading-5 text-slate-600">Interview readiness for embedded,
+                                        IoT, firmware, automation, and edge roles.</p>
+                                </div>
+                            </div>
+                            <span
+                                class="mt-4 inline-flex rounded-full border border-brand-400/30 bg-white/10 px-3 py-1 text-[0.68rem] font-bold text-slate-100">Career</span>
+                        </article>
+                    </div>
+
+                    <div class="mt-7 grid gap-4 md:grid-cols-3">
+                        <div class="rounded-2xl border border-brand-400/30 bg-white/10 p-4">
+                            <div class="flex items-center justify-between gap-4">
+                                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Skill
+                                    Depth</span>
+                                <span class="text-sm font-extrabold text-slate-900">90%</span>
+                            </div>
+                            <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-900/40">
+                                <div class="h-full w-[90%] rounded-full bg-gradient-to-r from-sky-700 to-sky-300"></div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl border border-brand-400/30 bg-white/10 p-4">
+                            <div class="flex items-center justify-between gap-4">
+                                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Portfolio
+                                    Evidence</span>
+                                <span class="text-sm font-extrabold text-slate-900">85%</span>
+                            </div>
+                            <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-900/40">
+                                <div class="h-full w-[85%] rounded-full bg-gradient-to-r from-sky-700 to-cyan-300">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl border border-brand-400/30 bg-white/10 p-4">
+                            <div class="flex items-center justify-between gap-4">
+                                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Career
+                                    Readiness</span>
+                                <span class="text-sm font-extrabold text-slate-900">95%</span>
+                            </div>
+                            <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-900/40">
+                                <div class="h-full w-[95%] rounded-full bg-gradient-to-r from-sky-700 to-blue-300">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="site-shell.js"></script>
+</body>
+
+</html>

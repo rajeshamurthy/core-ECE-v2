@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Electronics & Communication Engineering | SECE</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        // Medical Blue Primary Palette
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#0284c7',
+                            600: '#0284c7', // Primary Accent Blue
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        // Teal Secondary Accents
+                        tealAccent: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                        },
+                        // Purple Role Palette (Targeted)
+                        purpleRole: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="h-full flex flex-col text-slate-700 bg-slate-50 antialiased font-sans">
+
+    <!-- Header Navigation -->
+    <header id="header" class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Logo & Branding -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="p-1.5 rounded-lg border border-slate-100 bg-white shadow-sm flex items-center justify-center">
+                            <img src="clg-logo.jpg" alt="SECE Logo" class="h-8 w-auto object-contain"
+                                onerror="this.onerror=null; this.src='https://via.placeholder.com/140x40?text=SECE+ECE';">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors leading-tight">Dept. of ECE</span>
+                            <span class="text-[11px] font-medium text-slate-500">Sri Eshwar College of Eng.</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="index.html" class="px-3.5 py-2 text-xs font-semibold text-slate-600 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors">
+                        Home
+                    </a>
+                    <a href="programs.html" class="px-3.5 py-2 text-xs font-semibold text-brand-600 bg-brand-50 rounded-lg transition-colors border border-brand-100/50">
+                        Core Areas
+                    </a>
+                    <a href="achievements.html" class="px-3.5 py-2 text-xs font-semibold text-slate-600 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors">
+                        Achievements
+                    </a>
+                    <a href="placements.html" class="px-3.5 py-2 text-xs font-semibold text-slate-600 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors">
+                        Placements
+                    </a>
+                </nav>
+
+                <!-- Actions / Status Area -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <span class="inline-flex items-center gap-x-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Academic Year 2026-27 Active
+                    </span>
+                </div>
+
+                <!-- Mobile Navigation Trigger -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-1">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50">Home</a>
+            <a href="programs.html" class="block px-3 py-2 rounded-md text-sm font-semibold text-brand-600 bg-brand-50">Core Areas</a>
+            <a href="achievements.html" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50">Achievements</a>
+            <a href="placements.html" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50">Placements</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex-grow">
+        
+        <!-- Breadcrumb & Top Bar Section -->
+        <section class="bg-white border-b border-slate-200/80 py-3.5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex text-xs font-medium text-slate-500" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="index.html" class="hover:text-brand-600 inline-flex items-center">
+                                <i class="fa-solid fa-house mr-1.5 text-slate-400"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-chevron-right text-[10px] text-slate-300 mx-1"></i>
+                                <span class="text-slate-900 font-semibold">Academic Core Domains</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Domain Section -->
+        <section id="programs" class="py-10 md:py-14 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="max-w-3xl mb-10">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-bold text-brand-700 bg-brand-50 border border-brand-100 uppercase tracking-wider mb-3">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Academic Excellence
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Core Domains & Specialized Tracks</h1>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Our structured technical curriculum is built around three specialized engineering pillars designed for industry integration, rigorous lab experience, and core placement readiness.
+                    </p>
+                </div>
+
+                <!-- Domains Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Domain 01: Embedded Systems & IoT -->
+                    <div class="flex flex-col bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+                        
+                        <!-- Card Header -->
+                        <div class="p-6 pb-4 border-b border-slate-100 bg-gradient-to-b from-slate-50/50 to-white">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <div class="h-12 w-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 text-xl shadow-xs">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-tealAccent-50 text-tealAccent-700 border border-tealAccent-100">
+                                    Device to Cloud
+                                </span>
+                            </div>
+
+                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-600">Domain 01</p>
+                            <h2 class="text-lg font-bold text-slate-900 mt-0.5">Embedded Systems & IoT</h2>
+                            <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                Build production-ready connected devices with firmware, sensors, RTOS, protocols, and cloud telemetry.
+                            </p>
+                        </div>
+
+                        <!-- Card Body Details -->
+                        <div class="p-6 pt-4 flex-grow flex flex-col justify-between space-y-5">
+                            
+                            <!-- Key Metrics / Sub-cards -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Core Labs</span>
+                                    <span class="block text-xs font-bold text-slate-800 mt-0.5">Embedded Hardware + IoT</span>
+                                </div>
+                                <div class="bg-purpleRole-50 rounded-xl p-3 border border-purpleRole-100">
+                                    <span class="block text-[10px] font-bold text-purpleRole-700 uppercase tracking-wider">Role Profile</span>
+                                    <span class="block text-xs font-bold text-slate-900 mt-0.5">Embedded Engineer</span>
+                                </div>
+                            </div>
+
+                            <!-- Technical Competencies Tags -->
+                            <div>
+                                <span class="block text-[11px] font-semibold text-slate-500 mb-2">Key Competencies</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">Hardware Design</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">Embedded C</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">RTOS</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">Cloud Connectivity</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer CTA link -->
+                            <div class="pt-4 border-t border-slate-100">
+                                <a href="embedded-iot.html" class="inline-flex items-center justify-between w-full text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors group">
+                                    <span>Training to Placements Roadmap</span>
+                                    <div class="h-7 w-7 rounded-lg bg-brand-50 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-all">
+                                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Domain 02: VLSI Design -->
+                    <div class="flex flex-col bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+                        
+                        <!-- Card Header -->
+                        <div class="p-6 pb-4 border-b border-slate-100 bg-gradient-to-b from-slate-50/50 to-white">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <div class="h-12 w-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 text-xl shadow-xs">
+                                    <i class="fa-solid fa-memory"></i>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-tealAccent-50 text-tealAccent-700 border border-tealAccent-100">
+                                    Silicon Flow
+                                </span>
+                            </div>
+
+                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-600">Domain 02</p>
+                            <h2 class="text-lg font-bold text-slate-900 mt-0.5">VLSI Design</h2>
+                            <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                Move through RTL, verification, DFT, physical design, analog layout, and post-silicon validation.
+                            </p>
+                        </div>
+
+                        <!-- Card Body Details -->
+                        <div class="p-6 pt-4 flex-grow flex flex-col justify-between space-y-5">
+                            
+                            <!-- Key Metrics / Sub-cards -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Core Labs</span>
+                                    <span class="block text-xs font-bold text-slate-800 mt-0.5">EDA + FPGA</span>
+                                </div>
+                                <div class="bg-purpleRole-50 rounded-xl p-3 border border-purpleRole-100">
+                                    <span class="block text-[10px] font-bold text-purpleRole-700 uppercase tracking-wider">Role Profile</span>
+                                    <span class="block text-xs font-bold text-slate-900 mt-0.5">Design Verification</span>
+                                </div>
+                            </div>
+
+                            <!-- Technical Competencies Tags -->
+                            <div>
+                                <span class="block text-[11px] font-semibold text-slate-500 mb-2">Key Competencies</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">RTL Design</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">SystemVerilog</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">ASIC PD</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">Validation</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer CTA link -->
+                            <div class="pt-4 border-t border-slate-100">
+                                <a href="vlsi-design.html" class="inline-flex items-center justify-between w-full text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors group">
+                                    <span>Training to Placements Roadmap</span>
+                                    <div class="h-7 w-7 rounded-lg bg-brand-50 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-all">
+                                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Domain 03: RF & Communication -->
+                    <div class="flex flex-col bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+                        
+                        <!-- Card Header -->
+                        <div class="p-6 pb-4 border-b border-slate-100 bg-gradient-to-b from-slate-50/50 to-white">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <div class="h-12 w-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 text-xl shadow-xs">
+                                    <i class="fa-solid fa-satellite-dish"></i>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-tealAccent-50 text-tealAccent-700 border border-tealAccent-100">
+                                    Wireless Systems
+                                </span>
+                            </div>
+
+                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-brand-600">Domain 03</p>
+                            <h2 class="text-lg font-bold text-slate-900 mt-0.5">RF & Communication</h2>
+                            <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                Master DSP, RF design, antennas, EMI/EMC, MATLAB/Python analysis, and 5G/6G communication architecture.
+                            </p>
+                        </div>
+
+                        <!-- Card Body Details -->
+                        <div class="p-6 pt-4 flex-grow flex flex-col justify-between space-y-5">
+                            
+                            <!-- Key Metrics / Sub-cards -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Core Labs</span>
+                                    <span class="block text-xs font-bold text-slate-800 mt-0.5">RF + DSP</span>
+                                </div>
+                                <div class="bg-purpleRole-50 rounded-xl p-3 border border-purpleRole-100">
+                                    <span class="block text-[10px] font-bold text-purpleRole-700 uppercase tracking-wider">Role Profile</span>
+                                    <span class="block text-xs font-bold text-slate-900 mt-0.5">RF Engineer</span>
+                                </div>
+                            </div>
+
+                            <!-- Technical Competencies Tags -->
+                            <div>
+                                <span class="block text-[11px] font-semibold text-slate-500 mb-2">Key Competencies</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">DSP</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">MATLAB/Python</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">Antenna Design</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">5G/6G</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer CTA link -->
+                            <div class="pt-4 border-t border-slate-100">
+                                <a href="signal-communication.html" class="inline-flex items-center justify-between w-full text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors group">
+                                    <span>Training to Placements Roadmap</span>
+                                    <div class="h-7 w-7 rounded-lg bg-brand-50 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-all">
+                                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 text-xs mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white p-1 rounded border border-slate-700">
+                        <img src="clg-logo.jpg" alt="SECE Logo" class="h-6 w-auto object-contain opacity-90"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/100x30?text=SECE';">
+                    </div>
+                    <div>
+                        <p class="text-white font-bold leading-none">Dept. of Electronics & Communication Engineering</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Sri Eshwar College of Engineering</p>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-right text-slate-400">
+                    <p>Empowering the next generation of electronics and communication innovators.</p>
+                    <p class="text-[10px] text-slate-500 mt-1">&copy; 2026 Sri Eshwar College of Engineering. All rights reserved.</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Smooth scrolling behavior for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="site-shell.js"></script>
+</body>
+
+</html>

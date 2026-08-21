@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Electronics & Communication Engineering | SECE</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: '#f59e0b',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(to right, rgba(12, 74, 110, 0.9), rgba(12, 74, 110, 0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased font-sans pt-16">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="bg-white p-1 rounded-lg shadow-sm">
+                        <img src="clg-logo.jpg" alt="SECE Logo" class="h-9 md:h-11 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=SECE'">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-5 lg:space-x-6">
+                    <a href="index.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Home</a>
+                    <a href="programs.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Core
+                        Areas</a>
+                    <a href="achievements.html"
+                        class="text-slate-600 hover:text-brand-600 font-semibold text-xs transition-colors">Achievements</a>
+                    <a href="placements.html" class="text-brand-600 font-bold text-xs transition-colors">Placements</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-slate-600 hover:text-brand-600 p-1.5">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+    <!-- Placement Analysis Dashboard -->
+    <section class="py-8 bg-gradient-to-b from-slate-50 to-white" id="placement-analysis">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-xl mx-auto mb-6">
+                <h2 class="text-[10px] font-bold text-brand-600 uppercase tracking-widest mb-0.5">
+                    <i class="fa-solid fa-chart-line mr-1"></i>Batch 2022-26
+                </h2>
+                <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-1">Placement Analysis with Domain</h3>
+                <p class="text-slate-500 text-sm">A comprehensive visual breakdown of placement performance across
+                    the grouped placement tracks.</p>
+            </div>
+
+            <!-- Summary Stat Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    <div
+                        class="w-10 h-10 mx-auto mb-2 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-slate-900 stat-number" data-target="186">0</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Total Students</div>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    <div
+                        class="w-10 h-10 mx-auto mb-2 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-slate-900 stat-number" data-target="178">0</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Placed Students
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    <div
+                        class="w-10 h-10 mx-auto mb-2 bg-red-100 text-red-500 rounded-lg flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-user-xmark"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-slate-900 stat-number" data-target="8">0</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Non-placed</div>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    <div
+                        class="w-10 h-10 mx-auto mb-2 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-slate-900"><span class="stat-number"
+                            data-target="96">0</span>%</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Overall Rate</div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 mb-10">
+                <!-- Bar Chart — spans 3 cols -->
+                <div class="lg:col-span-3 bg-white rounded-xl p-5 shadow-md border border-slate-100">
+                    <h4 class="text-base font-bold text-slate-800 mb-4"><i
+                            class="fa-solid fa-chart-column text-brand-500 mr-2"></i>Students: Total vs Placed</h4>
+                    <div class="relative" style="height:260px;">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+                <!-- Doughnut Chart — spans 2 cols -->
+                <div
+                    class="lg:col-span-2 bg-white rounded-xl p-5 shadow-md border border-slate-100 flex flex-col items-center justify-center">
+                    <h4 class="text-base font-bold text-slate-800 mb-4"><i
+                            class="fa-solid fa-chart-pie text-brand-500 mr-2"></i>Overall Placement Split</h4>
+                    <div class="relative" style="width:200px;height:200px;">
+                        <canvas id="doughnutChart"></canvas>
+                        <!-- Center label -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                            <span class="text-2xl font-extrabold text-slate-900">96%</span>
+                            <span class="text-xs font-semibold text-slate-400">Placed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain-wise Radial Progress Cards -->
+            <h4 class="text-base font-bold text-slate-800 mb-4 text-center"><i
+                    class="fa-solid fa-bullseye text-brand-500 mr-1"></i>Track-wise Placement Rate</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <!-- IT + Networking + Moved to Core -->
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative w-20 h-20 mx-auto mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10" />
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="#3b82f6" stroke-width="10"
+                                stroke-dasharray="326.73" stroke-dashoffset="19.60" stroke-linecap="round"
+                                class="radial-progress transition-all duration-1000" />
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-base font-extrabold text-slate-800">94%</span>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-slate-800 text-base">IT</h5>
+                    <p class="text-xs text-slate-400 mt-0.5">116 / 123</p>
+                </div>
+                <!-- ESIOT -->
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative w-20 h-20 mx-auto mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10" />
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="#8b5cf6" stroke-width="10"
+                                stroke-dasharray="326.73" stroke-dashoffset="6.53" stroke-linecap="round"
+                                class="radial-progress transition-all duration-1000" />
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-base font-extrabold text-slate-800">98%</span>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-slate-800 text-base">ESIOT</h5>
+                    <p class="text-xs text-slate-400 mt-0.5">48 / 49</p>
+                </div>
+                <!-- VLSI -->
+                <div
+                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative w-20 h-20 mx-auto mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10" />
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="#10b981" stroke-width="10"
+                                stroke-dasharray="326.73" stroke-dashoffset="0" stroke-linecap="round"
+                                class="radial-progress transition-all duration-1000" />
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-base font-extrabold text-slate-800">100%</span>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-slate-800 text-base">VLSI</h5>
+                    <p class="text-xs text-slate-400 mt-0.5">14 / 14</p>
+                </div>
+            </div>
+
+            <!-- Horizontal Bar Chart — Placement Percentage -->
+            <div class="bg-white rounded-xl p-5 shadow-md border border-slate-100">
+                <h4 class="text-base font-bold text-slate-800 mb-4"><i
+                        class="fa-solid fa-percent text-brand-500 mr-1"></i>Placement Percentage by Track</h4>
+                <div class="relative" style="height:220px;">
+                    <canvas id="hBarChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart Initialization Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const domains = ['IT', 'ESIOT', 'VLSI', 'Networking', 'Moved to Core'];
+            const total = [54, 49, 14, 19, 50];
+            const placed = [52, 48, 14, 19, 45];
+            const pct = [96, 98, 100, 100, 90];
+            const colors = ['#3b82f6', '#8b5cf6', '#10b981', '#06b6d4', '#f59e0b'];
+            const colorsBg = ['rgba(59,130,246,.15)', 'rgba(139,92,246,.15)', 'rgba(16,185,129,.15)', 'rgba(6,182,212,.15)', 'rgba(245,158,11,.15)'];
+
+            // --- Bar Chart ---
+            new Chart(document.getElementById('barChart'), {
+                type: 'bar',
+                data: {
+                    labels: domains,
+                    datasets: [
+                        { label: 'Total Students', data: total, backgroundColor: 'rgba(14,165,233,0.75)', borderColor: '#0ea5e9', borderWidth: 2, borderRadius: 8, barPercentage: 0.55 },
+                        { label: 'Placed Students', data: placed, backgroundColor: 'rgba(16,185,129,0.75)', borderColor: '#10b981', borderWidth: 2, borderRadius: 8, barPercentage: 0.55 }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    animation: { duration: 1200, easing: 'easeOutQuart' },
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true, padding: 20, font: { family: 'Outfit', weight: '600' } } } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { font: { family: 'Outfit', weight: '600', size: 13 } } },
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Outfit' } } }
+                    }
+                }
+            });
+
+            // --- Doughnut Chart ---
+            new Chart(document.getElementById('doughnutChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Placed', 'Non-placed'],
+                    datasets: [{
+                        data: [178, 8],
+                        backgroundColor: ['#10b981', '#f43f5e'],
+                        borderWidth: 0,
+                        spacing: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '72%',
+                    animation: { animateRotate: true, duration: 1400, easing: 'easeOutCirc' },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // --- Horizontal Bar Chart ---
+            new Chart(document.getElementById('hBarChart'), {
+                type: 'bar',
+                data: {
+                    labels: domains,
+                    datasets: [{
+                        label: 'Placement %',
+                        data: pct,
+                        backgroundColor: colors.map(c => c + 'cc'),
+                        borderColor: colors,
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true, maintainAspectRatio: false,
+                    animation: { duration: 1200, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ctx.raw + '%' } }
+                    },
+                    scales: {
+                        x: { min: 80, max: 102, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { callback: v => v + '%', font: { family: 'Outfit', weight: '600' } } },
+                        y: { grid: { display: false }, ticks: { font: { family: 'Outfit', weight: '700', size: 14 } } }
+                    }
+                }
+            });
+
+            // --- Animated Stat Numbers ---
+            const animateNumbers = () => {
+                document.querySelectorAll('.stat-number').forEach(el => {
+                    const target = +el.dataset.target;
+                    const duration = 1500;
+                    const start = performance.now();
+                    const step = ts => {
+                        const progress = Math.min((ts - start) / duration, 1);
+                        const ease = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(ease * target);
+                        if (progress < 1) requestAnimationFrame(step);
+                        else el.textContent = target;
+                    };
+                    requestAnimationFrame(step);
+                });
+            };
+
+            // Trigger when section scrolls into view
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) { animateNumbers(); observer.disconnect(); } });
+            }, { threshold: 0.25 });
+            observer.observe(document.getElementById('placement-analysis'));
+        });
+    </script>
+
+    <!-- Placement Highlights -->
+    <section id="placements" class="py-12 bg-brand-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-xs font-bold text-brand-300 uppercase tracking-widest mb-1">Career Success</h2>
+                <h3 class="text-xl md:text-2xl font-extrabold text-white mb-2">Stellar Placements</h3>
+                <p class="text-brand-100 text-sm">Our alumni are leading technical innovation at global companies.</p>
+            </div>
+
+            <!-- Industry Partners / Recruiting Companies -->
+            <div class="bg-white/5 border border-white/10 rounded-xl p-5 mb-10">
+                <h4 class="text-center font-bold text-brand-200 mb-5 uppercase tracking-widest text-xs">Key Industry
+                    Partners</h4>
+                <div id="company-logos" class="grid company-logo-grid gap-3 items-stretch justify-items-stretch">
+                    <div class="company-logo-card" title="Silicon Labs">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/05/silicon_labs_Logo.jpg"
+                            alt="Silicon Labs" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Silicon Labs</span>
+                    </div>
+                    <div class="company-logo-card" title="BP">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/bp.jpg" alt="BP"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">BP</span>
+                    </div>
+                    <div class="company-logo-card" title="Cadence">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/cadence.jpg" alt="Cadence"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Cadence</span>
+                    </div>
+                    <div class="company-logo-card" title="CommScope">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/commscope.jpg" alt="CommScope"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">CommScope</span>
+                    </div>
+                    <div class="company-logo-card" title="ABB">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/09/abb-logo.png" alt="ABB"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">ABB</span>
+                    </div>
+                    <div class="company-logo-card" title="Parallel Wireless">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Parallel-wireless-1.jpg"
+                            alt="Parallel Wireless" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Parallel Wireless</span>
+                    </div>
+                    <div class="company-logo-card" title="Philips">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/philips-1.jpg" alt="Philips"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Philips</span>
+                    </div>
+                    <div class="company-logo-card" title="Giga">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/giga.jpg" alt="Giga"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Giga</span>
+                    </div>
+                    <div class="company-logo-card" title="MIC">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/mic.jpg" alt="MIC"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">MIC</span>
+                    </div>
+                    <div class="company-logo-card" title="AMD">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/07/amd.png" alt="AMD"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">AMD</span>
+                    </div>
+                    <div class="company-logo-card" title="Toshiba">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/toshiba.jpg" alt="Toshiba"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Toshiba</span>
+                    </div>
+                    <div class="company-logo-card" title="Comcast">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/comcast_logo.jpg" alt="Comcast"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Comcast</span>
+                    </div>
+                    <div class="company-logo-card" title="EmbedUR">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/embedur.jpg" alt="EmbedUR"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">EmbedUR</span>
+                    </div>
+                    <div class="company-logo-card" title="HP">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/hp_logo.jpg" alt="HP"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">HP</span>
+                    </div>
+                    <div class="company-logo-card" title="MulticoreWare">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Multicoreware.jpg" alt="MulticoreWare"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">MulticoreWare</span>
+                    </div>
+                    <div class="company-logo-card" title="Schneider Electric">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/se.jpg" alt="Schneider Electric"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Schneider Electric</span>
+                    </div>
+                    <div class="company-logo-card" title="LU">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/lu-1.jpg" alt="LU"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">LU</span>
+                    </div>
+                    <div class="company-logo-card" title="NB">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/nb.jpg" alt="NB"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">NB</span>
+                    </div>
+                    <div class="company-logo-card" title="ZED Digital">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/ZED-Digital.jpg" alt="ZED Digital"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">ZED Digital</span>
+                    </div>
+                    <div class="company-logo-card" title="Data Patterns">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/data.jpg" alt="Data Patterns"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Data Patterns</span>
+                    </div>
+                    <div class="company-logo-card" title="Cerium Systems">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/cerium.jpg" alt="Cerium Systems"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Cerium Systems</span>
+                    </div>
+                    <div class="company-logo-card" title="Planys">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Planys-logo.jpg" alt="Planys"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Planys</span>
+                    </div>
+                    <div class="company-logo-card" title="Siemens">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Siemens.jpg" alt="Siemens"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Siemens</span>
+                    </div>
+                    <div class="company-logo-card" title="VVDN">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/vvdn-logo.jpg" alt="VVDN"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">VVDN</span>
+                    </div>
+                    <div class="company-logo-card" title="Mitsubishi Electric">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/mitsubishi-electric-logo.jpg"
+                            alt="Mitsubishi Electric" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Mitsubishi Electric</span>
+                    </div>
+                    <div class="company-logo-card" title="SY">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/sy.jpg" alt="SY"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">SY</span>
+                    </div>
+                    <div class="company-logo-card" title="Plintron">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/plintron.jpg" alt="Plintron"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Plintron</span>
+                    </div>
+                    <div class="company-logo-card" title="SAN">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/san.jpg" alt="SAN"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">SAN</span>
+                    </div>
+                    <div class="company-logo-card" title="NS">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/ns.jpg" alt="NS"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">NS</span>
+                    </div>
+                    <div class="company-logo-card" title="UNI">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/uni.jpg" alt="UNI"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">UNI</span>
+                    </div>
+                    <div class="company-logo-card" title="JI">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/ji.jpg" alt="JI"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">JI</span>
+                    </div>
+                    <div class="company-logo-card" title="Lennox">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/12/Lennox-logo-new-.webp" alt="Lennox"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Lennox</span>
+                    </div>
+                    <div class="company-logo-card" title="UltraTech">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/Ultratech-new-logo-.webp"
+                            alt="UltraTech" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">UltraTech</span>
+                    </div>
+                    <div class="company-logo-card" title="PRS Group">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/PRS-Group-logo-.webp" alt="PRS Group"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">PRS Group</span>
+                    </div>
+                    <div class="company-logo-card" title="Quadra">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/Quadra.webp" alt="Quadra"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Quadra</span>
+                    </div>
+                    <div class="company-logo-card" title="Ignitarium">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/Ignitarium-.webp" alt="Ignitarium"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Ignitarium</span>
+                    </div>
+                    <div class="company-logo-card" title="JSE">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/05/jse.jpg" alt="JSE"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">JSE</span>
+                    </div>
+                    <div class="company-logo-card" title="Universion">
+                        <img src="https://sece.ac.in/wp-content/uploads/2026/03/universion.png" alt="Universion"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Universion</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Highlights Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-3">
+                        <div
+                            class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-green-500/30">
+                            Hardware Verification</div>
+                        <span class="text-brand-300 font-bold text-sm">18.5 LPA</span>
+                    </div>
+                    <h5 class="text-sm font-bold mb-1">Tier-1 Semiconductor</h5>
+                    <p class="text-xs text-brand-200">Internship + Full-time offer converted through SIH Hackathon
+                        performance.</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-3">
+                        <div
+                            class="bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-purple-500/30">
+                            SoC Design</div>
+                        <span class="text-brand-300 font-bold text-sm">14.0 LPA</span>
+                    </div>
+                    <h5 class="text-sm font-bold mb-1">Global Tech Giant</h5>
+                    <p class="text-xs text-brand-200">Selected after 6-month external internship at the Bangalore R&D
+                        facility.</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-3">
+                        <div
+                            class="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-orange-500/30">
+                            Firmware Spec.</div>
+                        <span class="text-brand-300 font-bold text-sm">8.5 LPA</span>
+                    </div>
+                    <h5 class="text-sm font-bold mb-1">Automotive MNC</h5>
+                    <p class="text-xs text-brand-200">Recruited based on prototype development at SECE Automotive Labs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="bg-white p-1.5 rounded-md">
+                        <img src="clg-logo.jpg" alt="SECE Logo" class="h-6 w-auto opacity-90"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=SECE'">
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Dept. of ECE</h4>
+                        <p class="text-[10px]">Sri Eshwar College of Engineering</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-xs mb-1">Empowering the next generation of electronics and communication innovators.
+                    </p>
+                    <p class="text-[10px] opacity-50">&copy; 2024 Sri Eshwar College of Engineering. All rights
+                        reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling & Navbar background script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const logoCards = document.querySelectorAll('#company-logos > div');
+
+            const escapeXml = value => value
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&apos;');
+
+            const hashString = value => {
+                let hash = 0;
+                for (let index = 0; index < value.length; index += 1) {
+                    hash = ((hash << 5) - hash) + value.charCodeAt(index);
+                    hash |= 0;
+                }
+                return Math.abs(hash);
+            };
+
+            const createFallbackLogo = label => {
+                const cleanedLabel = label.replace(/&/g, 'and').replace(/[^a-zA-Z0-9 ]/g, ' ').trim() || 'Logo';
+                const words = cleanedLabel.split(/\s+/).filter(Boolean);
+                const initials = words.slice(0, 2).map(word => word[0]).join('').toUpperCase() || 'L';
+                const displayLabel = cleanedLabel.length > 16 ? `${cleanedLabel.slice(0, 15)}...` : cleanedLabel;
+                const hue = hashString(label) % 360;
+                const primary = `hsl(${hue} 72% 36%)`;
+                const secondary = `hsl(${(hue + 26) % 360} 78% 28%)`;
+                const svg = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" role="img" aria-label="${escapeXml(label)}">
+                        <defs>
+                            <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="${primary}"/>
+                                <stop offset="100%" stop-color="${secondary}"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="240" height="96" rx="14" fill="url(#g)"/>
+                        <circle cx="44" cy="48" r="24" fill="rgba(255,255,255,0.18)"/>
+                        <text x="44" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">${escapeXml(initials)}</text>
+                        <text x="84" y="44" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">${escapeXml(displayLabel)}</text>
+                        <text x="84" y="64" font-family="Arial, sans-serif" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.8)">PARTNER</text>
+                    </svg>`;
+                return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+            };
+
+            logoCards.forEach(card => {
+                let image = card.querySelector('img');
+                const label = card.getAttribute('title') || image?.alt || 'Company';
+                const fallbackLogo = createFallbackLogo(label);
+                const fallbackText = card.querySelector('.company-logo-fallback, span:last-child');
+
+                if (!image) {
+                    image = document.createElement('img');
+                    image.src = fallbackLogo;
+                    image.alt = `${label} logo`;
+                    image.className = 'max-h-10 max-w-full object-contain';
+                    card.prepend(image);
+                    if (fallbackText) {
+                        fallbackText.style.display = 'none';
+                    }
+                    return;
+                }
+
+                image.loading = 'lazy';
+                image.decoding = 'async';
+                image.referrerPolicy = 'no-referrer';
+
+                const showFallback = () => {
+                    image.removeAttribute('onerror');
+                    image.src = fallbackLogo;
+                    image.alt = `${label} logo`;
+                    image.style.display = 'block';
+                    if (fallbackText) {
+                        fallbackText.style.display = 'none';
+                    }
+                };
+
+                if (image.complete && image.naturalWidth === 0) {
+                    showFallback();
+                } else {
+                    image.addEventListener('error', showFallback, { once: true });
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'bg-white/95');
+                    header.classList.remove('bg-white/90');
+                } else {
+                    header.classList.remove('shadow-md', 'bg-white/95');
+                    header.classList.add('bg-white/90');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="site-shell.js"></script>
+</body>
+
+</html>
